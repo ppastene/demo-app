@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<title>Título de la página</title>
-</head>
+<html>
 <body>
 <h2>Hola Gente!</h2>
 <h3>Subtitulo</h3>
