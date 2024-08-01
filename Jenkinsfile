@@ -1,38 +1,9 @@
 pipeline {
-    agent any
-
+    agent any 
     stages {
-        
-          stage('SCM') {
-            checkout scm
-          }
-            
-          stage('SonarQube Analysis') {
-            def mvn = tool 'Default Maven';
-            withSonarQubeEnv() {
-              sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=td-demo-app -Dsonar.projectName='td-demo-app'"
-            }
-          }
-
-        stage('Build') {
+        stage('Stage 1') {
             steps {
-                echo 'Building...'
-                // Aquí puedes agregar tus comandos de compilación, por ejemplo:
-                // sh 'mvn clean install'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing...'
-                // Aquí puedes agregar tus comandos de prueba, por ejemplo:
-                // sh 'mvn test'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying...'
-                // Aquí puedes agregar tus comandos de despliegue, por ejemplo:
-                // sh 'kubectl apply -f deployment.yaml'
+                echo 'Hello world!' 
             }
         }
     }
