@@ -6,6 +6,11 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/ppastene/demo-app.git'
             }
         }
+        stage('Clean'){
+            steps {
+                sh 'mvn clean'
+            }
+        }
         stage('Test') {
             steps {
                 sh 'mvn test'
@@ -18,7 +23,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                sh 'mvn package'
             }
         }
     }
