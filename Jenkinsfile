@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     stages {
-        stage('Chekout') {
+        stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/ppastene/demo-app.git'
             }
